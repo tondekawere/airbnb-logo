@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { CssBaseline } from "@mui/material";
+import Header from "./components/Header";
+import ImageSection from "./components/ImageSection";
+import OnlineExperiences from "./components/OnlineExperiences";
 
 function App() {
+   useEffect(() => {
+     const link = document.createElement("link");
+     link.href =
+       "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap";
+     link.rel = "stylesheet";
+     document.head.appendChild(link);
+   }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CssBaseline />
+      <Header />
+      <ImageSection />
+      <OnlineExperiences />
     </div>
   );
 }
